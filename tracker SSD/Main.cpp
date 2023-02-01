@@ -56,8 +56,6 @@ int main()
 		cv::imshow("1", frame);
 		auto elapsedInfer = std::chrono::duration_cast<std::chrono::milliseconds>(
 			std::chrono::system_clock::now() - curTime);
-		/*Чтобы визуально сохранялся фпс, делаю этот шаг. Аргумент при длительном инференсе
-		может стать отрицательным, для читаемости эту проверку не делаю*/
 		std::this_thread::sleep_for(FPS(1) - elapsedInfer);
 	}
 }
